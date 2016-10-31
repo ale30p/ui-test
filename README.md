@@ -27,7 +27,7 @@ Este proyecto utiliza [Gulp](http://gulpjs.com/) y [Webpack](https://webpack.git
 * Actualizando el navegador y la reconstrucción de los cambios del archivo
 
 ## Estructura de Archivos
-Utilizo un enfoque por componentes con este proyecto
+Utilizo un enfoque por componentes para este proyecto
 ```
 client
 ⋅⋅app/
