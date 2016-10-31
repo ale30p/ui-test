@@ -5,7 +5,7 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
-    "dist": "gulp dist"
+    "dist": "gulp webpack"
   },
   "keywords": [
     "html",
