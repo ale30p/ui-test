@@ -34,8 +34,7 @@ const common = {
     ],
     alias: {
       "chico.js": "chico/ui/chico.min.js",
-      "chico.css": "chico/ui/chico.min.css",
-      "foundation.css": "foundation.min.css"
+      "chico.css": "chico/ui/chico.min.css"
     }
   },
   module: {

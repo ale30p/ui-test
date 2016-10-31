@@ -3,10 +3,7 @@ import controller from './page.controller';
 import './page.scss';
 
 let pageComponent = {
-  bindings: {
-    pageTitle: '@'
-  },
-  transclude: {
+ transclude: {
     header: '?mlHeader',
     content: '?mlContent'
   },

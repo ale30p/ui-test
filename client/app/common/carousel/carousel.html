@@ -1,8 +1,7 @@
-<div class="product-carousel ch-carousel">
+<div class="carousel ch-carousel" role="region">
   <ul>
-    <li><img src="images/image1.jpg"></li>
-    <li><img src="images/image2.jpg"></li>
-    <li><img src="images/image3.jpg"></li>
-    <li><img src="images/image4.jpg"></li>
+    <li ng-repeat="img in vm.images track by $index">
+      <img class="carousel__image" src="{{ img.url }}" alt="{{ img.description }}">
+    </li>
   </ul>
 </div>

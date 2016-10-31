@@ -1,13 +1,11 @@
-<section class="page">
+<section class="page container">
+  <div class="row">
+    <div class="gr-12 page__box">
 
-  <header class="page__header" ng-transclude="header">
-    <div class="row">
-      <div class="large-12 columns">
-        <h2 class="page__title">{{ page.pageTitle }}</h2>
-      </div>
+      <header class="page__header" ng-transclude="header"></header>
+
+      <div class="page__container" ng-transclude="content"></div>
+
     </div>
-  </header>
-
-  <div class="page__container" ng-transclude="content"></div>
-
+  </div>
 </section>

@@ -1,17 +1,25 @@
-<div class="product">
+<div class="product container" itemscope itemtype="http://schema.org/Product">
+  <header class="row">
+    <div class="gr-12">
+      <h2 class="product__title" itemprop="name">{{ vm.product.title }}</h2>
+    </div>
+  </header>
+
   <div class="product__detail">
     <div class="row">
-      <div class="large-6 columns">
-        <div class="product__picture">
-          <img src="{{ vm.product.imageUrl }}" alt="{{ vm.product.title }}">
+      <div class="gr-6">
+        <div class="product__image-box">
+          <img class="product__image" src="{{ vm.product.imageUrl }}" alt="{{ vm.product.title }}" itemprop="image">
         </div>
       </div>
-      <div class="large-6 columns">
+      <div class="gr-6">
         <ml-order ua-product="vm.product"></ml-order>
       </div>
     </div>
   </div>
-  <div class="product__description">
+
+  <footer class="product__description">
     <ml-product-description ua-product="vm.product"></ml-product-description>
-  </div>
+  </footer>
+
 </div>

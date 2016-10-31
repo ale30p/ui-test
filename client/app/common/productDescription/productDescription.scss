@@ -2,7 +2,7 @@
 $padding: 10px;
 $labelPadding: $padding ($padding * 2);
 $borderWidth: 1px;
-$contentHeight: 400px;
+$contentHeight: 170px;
 $tabBorderRadius: 5px;
 
 // Colors
@@ -22,13 +22,9 @@ $selectedBgColor: #ddd;
   user-select: none;
 }
 
-.container {
-  padding: 5px;
-}
-
 .tabs {
   list-style: none;
-  margin: 0;
+  margin: 30px 0;
   padding: 0;
   position: relative;
 
@@ -58,13 +54,11 @@ $selectedBgColor: #ddd;
       @include no-text-select();
     }
 
-    &:first-child > label
-    {
+    &:first-child > label {
       border-top-left-radius: $tabBorderRadius;
     }
 
-    &:last-child > label
-    {
+    &:last-child > label {
       border-top-right-radius: $tabBorderRadius;
       border-right-width: $borderWidth;
     }
@@ -79,6 +73,7 @@ $selectedBgColor: #ddd;
       overflow-y: auto;
       border-bottom-left-radius: $tabBorderRadius;
       width: 100%;
+      box-sizing: border-box;
     }
   }
 

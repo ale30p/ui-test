@@ -1,22 +1,20 @@
 <div class="row">
-  <div class="large-12 columns">
-    <div class="container">
-      <ul class="tabs" role="tablist">
-        <li role="tab" aria-controls="panel1" aria-selected="true">
-          <input type="radio" name="tab" id="tab-1" checked />
-          <label for="tab-1">Descripción del producto</label>
-          <div class="tab-content" role="tabpanel" aria-labelledby="tab-1" aria-hidden="true">
-            <p>{{ vm.product.description }}</p>
-          </div>
-        </li>
-        <li role="tab" aria-controls="panel2" aria-selected="false">
-          <input type="radio" name="tab" id="tab-2" />
-          <label for="tab-2">Preguntas</label>
-          <div class="tab-content" role="tabpanel" aria-labelledby="tab-2" aria-hidden="false">
-            <ml-questions-answers ul-product-id="vm.product.id"></ml-question-answers>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="gr-12">
+    <ul class="tabs" role="tablist">
+      <li role="tab" aria-controls="panel1" aria-selected="true">
+        <input type="radio" name="tab" id="tab-1" checked />
+        <label for="tab-1">Descripción del producto</label>
+        <div class="tab-content" role="tabpanel" aria-labelledby="tab-1" aria-hidden="true">
+          <p itemprop="description">{{ vm.product.description }}</p>
+        </div>
+      </li>
+      <li role="tab" aria-controls="panel2" aria-selected="false">
+        <input type="radio" name="tab" id="tab-2" />
+        <label for="tab-2">Preguntas</label>
+        <div class="tab-content" role="tabpanel" aria-labelledby="tab-2" aria-hidden="false">
+          <ml-questions-answers ul-product-id="vm.product.id"></ml-question-answers>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>

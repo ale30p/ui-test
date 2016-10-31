@@ -1,6 +1,5 @@
 import template from './questionsAnswers.html';
 import controller from './questionsAnswers.controller';
-import './questionsAnswers.scss';
 
 let questionsAnswersComponent = {
   bindings: {

@@ -1,4 +1,7 @@
-<h1 class="product__price">$ {{ order.product.price }} </span></h1>
+<h1 class="product__price">
+  <span itemprop="priceCurrency" content="PESO">$</span>
+  <span itemprop="price" content="{{ order.product.price }}">{{ order.product.price }} </span>
+</h1>
 
 <form class="ch-form" novalidate>
   <fieldset>
@@ -27,4 +30,4 @@
   </fieldset>
 </form>
 
-<ml-carousel images="order.product.images"></ml-carousel>
+<ml-carousel ua-images="order.product.images"></ml-carousel>
