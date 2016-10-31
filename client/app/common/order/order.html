@@ -1,0 +1,30 @@
+<h1 class="product__price">$ {{ order.product.price }} </span></h1>
+
+<form class="ch-form" novalidate>
+  <fieldset>
+    <div class="ch-form-row">
+      <label for="product-quantity">Quantity</label>
+      <select id="product-quantity" ng-model="order.quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    <div class="ch-form-row">
+      <label for="product-payments">Payments</label>
+      <select id="product-payments" ng-model="order.payments">
+        <option value="12">12</option>
+        <option value="6">6</option>
+        <option value="3">3</option>
+        <option value="1">1</option>
+      </select>
+    </div>
+    <div class="ch-form-actions">
+      <input name="_eventId_confirmation" value="Buy" class="ch-btn" type="submit">
+      <span class="ch-form-hint">MercadoLibre no es el propietario de este producto.</span>
+    </div>
+  </fieldset>
+</form>
+
+<ml-carousel images="order.product.images"></ml-carousel>

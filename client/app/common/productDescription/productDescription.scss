@@ -1,0 +1,91 @@
+// Sizes and paddings
+$padding: 10px;
+$labelPadding: $padding ($padding * 2);
+$borderWidth: 1px;
+$contentHeight: 400px;
+$tabBorderRadius: 5px;
+
+// Colors
+$borderColor: #000;
+$selectedBgColor: #ddd;
+
+// Mixins
+
+// No text select, courtesy of this answer on Stack:
+// http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting#answer-4407335
+@mixin no-text-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container {
+  padding: 5px;
+}
+
+.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  & > li   {
+    float: left;
+
+    & > input     {
+      display: none;
+
+      &:checked + label {
+        background-color: $selectedBgColor;
+      }
+
+      &:checked ~ .tab-content {
+        display: block;
+      }
+    }
+
+    & > label {
+      display: inline-block;
+      padding: $labelPadding;
+      border: $borderWidth solid $borderColor;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      cursor: pointer;
+
+      @include no-text-select();
+    }
+
+    &:first-child > label
+    {
+      border-top-left-radius: $tabBorderRadius;
+    }
+
+    &:last-child > label
+    {
+      border-top-right-radius: $tabBorderRadius;
+      border-right-width: $borderWidth;
+    }
+
+    .tab-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      border: $borderWidth solid $borderColor;
+      padding: $padding;
+      height: $contentHeight;
+      overflow-y: auto;
+      border-bottom-left-radius: $tabBorderRadius;
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: $contentHeight;
+    clear: both;
+  }
+}

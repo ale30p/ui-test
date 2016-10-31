@@ -1,0 +1,10 @@
+<div class="questions-answers" ng-repeat="item in vm.questionsAnswers track by item.id">
+  <div class="ch-box-info">
+    <h3>Comprador</h3>
+    <p>{{ item.buyer }}</p>
+  </div>
+  <div class="ch-box-ok" ng-if="item.seller.length > 0">
+    <h3>Vendedor</h3>
+    <p>{{ item.seller }}</p>
+  </div>
+</div>

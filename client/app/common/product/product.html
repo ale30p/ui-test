@@ -1,0 +1,17 @@
+<div class="product">
+  <div class="product__detail">
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="product__picture">
+          <img src="{{ vm.product.imageUrl }}" alt="{{ vm.product.title }}">
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <ml-order ua-product="vm.product"></ml-order>
+      </div>
+    </div>
+  </div>
+  <div class="product__description">
+    <ml-product-description ua-product="vm.product"></ml-product-description>
+  </div>
+</div>
