@@ -21,8 +21,6 @@ Este proyecto utiliza [Gulp](http://gulpjs.com/) y [Webpack](https://webpack.git
 * Tiene varios loaders para importar y empaquetar también otros recursos (CSS, templates, …) así como otros lenguajes (ES6 con Babel, TypeScript, SaSS, etc).
 * Sus plugins te permiten hacer otras tareas importantes como por ejemplo minificar y ofuscar el código.
 
-http://survivejs.com/webpack/advanced-techniques/linting/
-
 `Gulp` es el orquestador:
 * Inicio y llamando Webpack
 * Inicio de un servidor de desarrollo
