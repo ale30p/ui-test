@@ -5,6 +5,8 @@ import merge from 'webpack-merge';
 import validate from 'webpack-validator';
 import webpack from 'webpack';
 
+/*global __dirname process module:true*/
+/*eslint no-undef: "error"*/
 const PATHS = {
   app: path.join(__dirname, 'client/app/app.js'),
   dist: path.join(__dirname, 'dist')

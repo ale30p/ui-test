@@ -23,7 +23,7 @@ let App = angular.module('app', [
 angular.element(document).ready(function () {
   angular.bootstrap(document.body, [ App.name ],{
     strictDi: true
-  })
+  });
 });
 
 export default App;

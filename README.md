@@ -8,6 +8,7 @@
     * [Dependencias](#dependencias)
     * [Instalación](#instalación)
     * [Correr la aplicación](#correr-la-aplicación)
+        * [Gulp Tasks](#gulp-tasks)
 * [Demo](#demo)
 * [Links útiles](#links-útiles)
 
@@ -60,6 +61,15 @@ Una vez que tenga estos, instalar lo siguiente como globales:
 ## Correr la aplicación
 ui-test utiliza Gulp para construir y poner en marcha el entorno de desarrollo. Después de haber instalado todas las dependencias, puede ejecutar la aplicación
 * npm start
+
+### Gulp Tasks
+lista de las tareas disponibles:
+* `default` (Para iniciar la aplicación correr `npm start`)
+	* Ejecuta `webpack-dev-server` para iniciar el servidor.
+* `webpack` (Correr `npm run dist`)
+  * Ejecuta Webpack
+* `lint` (Correr `npm run lint`)
+  * Muestra los errores de JavaScript
 
 # Demo
 Puedes ver la demo de la aplicación en el [link](https://ale30p.github.io/ui-test/)

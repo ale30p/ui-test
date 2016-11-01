@@ -67,8 +67,9 @@ gulp.task('default',
 
 gulp.task('lint', function () {
   return gulp.src([
-      'client/app/common/**/*.js',
-      'client/app/components/**/*.js'
+      'client/app/**/*.js',
+      'webpack.config.js',
+      'webpack.config.js'
     ])
     .pipe(eslint(eslintrc))
     .pipe(eslint.format())
