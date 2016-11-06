@@ -17,7 +17,7 @@ const vendor = ["angular"];
 const stylesLoaders = [
   'style',
   'css?importLoaders=1',
-  'font-loader?format[]=truetype&format[]=woff&format[]=embedded-opentype'
+  'postcss-loader?sourceMap=inline'
 ];
 
 const common = {
@@ -29,15 +29,6 @@ const common = {
     sourceMapFilename: '[file].map',
     path: PATHS.dist,
     filename: '[name].js'
-  },
-  resolve : {
-    root: [
-      path.resolve('./client/vendor')
-    ],
-    alias: {
-      "chico.js": "chico/ui/chico.min.js",
-      "chico.css": "chico/ui/chico.min.css"
-    }
   },
   module: {
     loaders: [

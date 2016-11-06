@@ -3,7 +3,7 @@ import angular from 'angular';
 /*eslint-disable no-unused-vars */
 import ngComponentRouter from '@angular/router/angular1/angular_1_router.js';
 //import chicoJs from 'chico.js';
-import 'chico.css';
+import 'chico/dist/ui/chico.min.css';
 /*eslint-enable no-unused-vars */
 
 //App components
