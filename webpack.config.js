@@ -1,11 +1,10 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
 import merge from 'webpack-merge';
 import validate from 'webpack-validator';
 import webpack from 'webpack';
+import parts from './libs/parts';
 
 /*global __dirname process module:true*/
 /*eslint no-undef: "error"*/
@@ -15,12 +14,6 @@ const PATHS = {
 };
 
 const vendor = ["angular"];
-
-const stylesLoaders = [
-  'style',
-  'css?importLoaders=1',
-  'postcss-loader?sourceMap=inline'
-];
 
 const common = {
   entry: {
@@ -37,14 +30,9 @@ const common = {
       { test: /\.js$/, exclude: [/app\/vendor/, /node_modules/], loader: 'ng-annotate' },
       { test: /\.js$/, exclude: [/node_modules/], loader: 'babel'},
       { test: /\.html$/, loader: 'raw' },
-      { test: /\.scss$/, loaders: [...stylesLoaders, 'sass?sourceMap'] },
-      { test: /\.css$/, loaders: stylesLoaders },
       { test: /\.(jpe|jpg|gif|otf|woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]' },
       { test: /\.json$/, loaders: ["json-loader"]}
     ]
-  },
-  postcss: function () {
-    return [autoprefixer, cssnano];
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -67,22 +55,23 @@ var config;
 // Detect how npm is run and branch based on that
 switch(process.env.npm_lifecycle_event) {
   case 'dist':
-    config = merge(common, {
-      cache: true,
-      devtool: 'source-map',
-      plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          }
-        })
-      ]
-    });
+    config = merge(
+      common,
+      {
+        devtool: 'source-map'
+      },
+      parts.minify(),
+      parts.extractCSS()
+    );
     break;
   default:
-    config = merge(common, {
-      devtool: 'eval-source-map'
-    });
+    config = merge(
+      common,
+      {
+        devtool: 'eval-source-map'
+      },
+      parts.setupCSS()
+    );
 }
 
 module.exports = validate(config);
